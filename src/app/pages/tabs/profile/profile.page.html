@@ -1,0 +1,15 @@
+
+
+<ion-content >
+  
+  <app-header title="perfil"></app-header>
+  <div class="content ion-text-center" >
+    <ion-icon class="avatar"name="person-circle-outline"></ion-icon>
+    <h2>{{user.name}}</h2>
+    <div>{{user.email}}</div>
+    <ion-button (click)="signOut()"  shape="round">
+      Cerrar sesión
+      <ion-icon slot="end" name="log-out-outline"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>

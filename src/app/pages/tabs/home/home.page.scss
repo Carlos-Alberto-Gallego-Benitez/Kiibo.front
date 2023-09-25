@@ -1,0 +1,87 @@
+ion-card{
+    border-radius: 15px;
+    padding: 10px;
+    min-height: 200px;
+    border: 1px solid rgba(255 , 255 , 255 , 0.168);
+}
+
+ion-card:hover{
+    cursor: pointer;
+    background: var(--ion-color-light);
+}
+.title{
+    font-size : 18px;
+    font-weight: bold;
+    padding-top: 10px;
+    line-height: 20px;
+
+}
+.tech-btn{
+    width: 200px;
+}
+.liked {
+    color: blue; /* Cambia el color a azul cuando está "me gusta" */
+  }
+  /* Estilo para el contenido principal */
+.content {
+    padding: 20px;
+  }
+  
+  /* Estilo para el botón "Agregar Tecnología" */
+  ion-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Cambiar el color de fondo del botón cuando se coloca el cursor sobre él */
+  ion-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilo para las tarjetas */
+  ion-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+  }
+  
+  /* Estilo para el ícono de "me gusta" */
+  ion-icon.liked {
+    color: blue;
+  }
+  
+  /* Estilo para el título de la tarjeta */
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para el párrafo de descripción */
+  ion-card p {
+    font-size: 0.9rem;
+  }
+  
+  /* Estilo para el botón "Agregar comentarios" */
+  .tech-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Cambiar el color de fondo del botón cuando se coloca el cursor sobre él */
+  .tech-btn:hover {
+    background-color: #0056b3;
+  }
+
+
+  .center-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  

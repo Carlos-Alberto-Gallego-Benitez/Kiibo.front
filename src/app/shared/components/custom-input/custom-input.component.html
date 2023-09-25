@@ -1,0 +1,18 @@
+<ion-item *ngIf="type !== 'textarea'" class="ion-margin-vertical">
+  <ion-icon *ngIf="icon" slot="start" [name]="icon"></ion-icon>
+  <ion-label>{{label}}</ion-label>
+  <ion-input debonce="500" [autocomplete]="autocomplete" [type]="type" [formControl]="control"></ion-input>
+  <ion-buttons *ngIf="isPassword" slot="end">
+    <ion-button (click)="showOrHidePassword()">
+      <ion-icon [name]="hide ?'eye-outline' : 'eye-off-outline' "></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-item>
+
+
+<ion-item *ngIf="type == 'textarea'" class="ion-margin-vertical">
+  <ion-label>{{label}}</ion-label>
+  <ion-textarea auto-group="true" debonce="500"  [formControl]="control">
+      
+  </ion-textarea>
+</ion-item>

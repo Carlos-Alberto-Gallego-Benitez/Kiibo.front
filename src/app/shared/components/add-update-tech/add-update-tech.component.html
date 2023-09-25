@@ -1,0 +1,50 @@
+<ion-content color="light">
+  <app-header [isModal]=true [title]="tech ? 'Tecnologias' : 'Nueva  Tecnologia'" [centerTitle]=true></app-header>
+    <app-custom-input  [control]="form.controls.title" type="text" label="Titulo" ></app-custom-input>
+    <div class="validators" *ngIf="form.controls.title.errors && form.controls.title.dirty">
+      <div *ngIf="form.controls.title.errors?.['required']">
+          Este campo es requerido
+      </div>
+      <div *ngIf="form.controls.title.errors?.['minlength']">
+          Este campo requiere al menos 4 caracteres
+      </div>
+    </div>
+
+    <app-custom-input  [control]="form.controls.description" type="textarea" label="Descripcion"></app-custom-input>
+    <div class="validators" *ngIf="form.controls.description.errors && form.controls.description.dirty">
+      <div *ngIf="form.controls.description.errors?.['required']">
+          Este campo es requerido
+      </div>
+      <div *ngIf="form.controls.description.errors?.['minlength']">
+          Este campo requiere al menos 4 caracteres
+      </div>
+    </div>
+
+    <ion-item class="item-header" lines="none">
+      <ion-label>Comentarios</ion-label>
+      <ion-button (click)="createCommentAlert()" slot="end" mode="ios">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    
+    <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+      <ion-item *ngFor="let item of form.value.comments; index as i">
+        <ion-label class="ion-text-wrap"> Item {{ item.name }} </ion-label>
+
+        <ion-buttons slot="end">
+          <ion-button (click)="removeItem(i)">
+            <ion-icon slot="start" name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+   
+</ion-content>
+<ion-footer>
+  <div class="ion-text-center">
+   <ion-button class="ion-margin" [disabled]="form.invalid" (click)="submit()" mode="ios" shape="round">
+      {{tech ? 'Guardar Cambios' : 'Crear Tecnologia' }}
+   </ion-button> 
+  </div>
+</ion-footer>

@@ -1,0 +1,41 @@
+<ion-content>
+  <app-header title="Tecnologias"></app-header>
+  <div class="content">
+    <ion-button (click)="addOrUpdateTech()" class="ion-margin" mode="ios">
+      Agregar Tecnologia
+      <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+    </ion-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let tech of Techn" size-lg="3" size-md="6" size-sm="12" size="12">
+          <ion-card mode="ios">
+            <ion-grid>
+              <ion-row>
+                <ion-col class="ion-text-center" size-lg="5" size-md="5" size-sm="4" size="12">
+                  <ion-icon name="heart" (click)="toggleLike(tech)" [ngClass]="{'liked': tech.liked}"></ion-icon>
+                  {{ tech.liked ? 1 : null }}
+                </ion-col>
+                <ion-col class="ion-padding" size-lg="7" size-md="7" size-sm="8" size="12">
+                  <div class="title">
+                    {{ tech.title }}
+                  </div>
+                  <label>
+                    {{ tech.description }}
+                  </label>
+                </ion-col>
+              </ion-row>
+              <ion-row class="center-btn">
+                <div class="ion-text-center">
+                  <ion-button (click)="addOrUpdateTech(tech)" class="tech-btn" mode="ios" size="small">
+                    Agregar comentarios
+                    <ion-icon slot="end" name="eye-outline"></ion-icon>
+                  </ion-button>
+                </div>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
